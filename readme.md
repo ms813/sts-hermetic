@@ -1,4 +1,4 @@
-#HermeticMod
+# HermeticMod
 
 Adds the Hermetic character to Slay the Spire.
 
