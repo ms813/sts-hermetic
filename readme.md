@@ -2,6 +2,11 @@
 
 Adds the Hermetic character to Slay the Spire.
 
+The Hermetic is focused around stacking hermetic Essences on enemies, then performing various Arts to bring our their potential.
+
+All of this leads up to creating Aurum, which provides permanent bonuses focused on gold gain and usage. What did you expect from an alchemist?
+
+
 ### Dev setup:
 This is a bit complicated but only needs to be done once:
 * Clone this directory to any directory on your local machine, we will call it `$PROJECT_DIR$`
