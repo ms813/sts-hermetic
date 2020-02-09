@@ -1,0 +1,40 @@
+{
+  "AetherPower": {
+    "NAME": "Aether",
+    "DESCRIPTIONS": [
+      "Infused with mysterious aether. Max stacks: "
+    ]
+  },
+  "SanguisPower": {
+    "NAME": "Sanguis",
+    "DESCRIPTIONS": [
+      "Bathed in hermetic blood. Max stacks: "
+    ]
+  },
+  "AurumPower": {
+    "NAME": "Aurum",
+    "DESCRIPTIONS": [
+      "Glittering in alchemical gold. Max stacks: "
+    ]
+  },
+  "ProjectionPower": {
+    "NAME": "Projection",
+    "DESCRIPTIONS": [
+      "Permanently upgrade the next card you play with midas"
+    ]
+  },
+  "ConduitPower": {
+    "NAME": "Conduit",
+    "DESCRIPTIONS": [
+      "Every time you apply aether or sanguis, apply ",
+      " more"
+    ]
+  },
+  "CompressionPower": {
+    "NAME": "Compression",
+    "DESCRIPTIONS": [
+      "Increase the maximum essence stacks by ",
+      ". The current max is "
+    ]
+  }
+}

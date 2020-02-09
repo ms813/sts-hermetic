@@ -1,0 +1,7 @@
+{
+  "IgniteCard": {
+    "NAME": "Ignite",
+    "DESCRIPTION": "Deal !D! damage !M! times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage !M!. NL Exhaust."
+  }
+}
