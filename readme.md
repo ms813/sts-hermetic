@@ -1,10 +1,12 @@
-#HermeticMod
+# HermeticMod
 
 Adds the Hermetic character to Slay the Spire.
 
 The Hermetic is focused around stacking hermetic Essences on enemies, then performing various Arts to bring our their potential.
 
 All of this leads up to creating Aurum, which provides permanent bonuses focused on gold gain and usage. What did you expect from an alchemist?
+
+Assets borrowed from [ValiantMod](https://github.com/ArchSinccubus/ModTheSpireCharacterProject/releases) until I can create my own
 
 
 ### Dev setup:
