@@ -11,7 +11,7 @@ import com.ms813.sts.hermetic.alchemy.AlchemyActions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.ms813.sts.hermetic.HermeticMod.IMG_PATH;
+import static com.ms813.sts.hermetic.HermeticMod.EXAMPLE_IMG_PATH;
 
 public class SanguisPower extends AbstractPower {
 
@@ -26,7 +26,7 @@ public class SanguisPower extends AbstractPower {
         this.ID = POWER_ID;
         this.name = powerStrings.NAME;
         this.owner = owner;
-        this.img = new Texture(IMG_PATH + "powers/DeadlyPlay.png");
+        this.img = new Texture(EXAMPLE_IMG_PATH + "powers/DeadlyPlay.png");
         this.amount = amount;
         this.type = PowerType.DEBUFF;
         this.updateDescription();

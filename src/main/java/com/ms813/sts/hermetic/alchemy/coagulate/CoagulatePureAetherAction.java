@@ -1,11 +1,13 @@
 package com.ms813.sts.hermetic.alchemy.coagulate;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.ms813.sts.hermetic.alchemy.AlchemyActionConsumer;
 import com.ms813.sts.hermetic.alchemy.AlchemyActions;
 import com.ms813.sts.hermetic.alchemy.AlchemyTuple;
+import com.ms813.sts.hermetic.cards.coagulate.AetherShieldCard;
+import com.ms813.sts.hermetic.cards.quicken.IgniteCard;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,8 +24,6 @@ public class CoagulatePureAetherAction implements AlchemyActionConsumer {
         int n = tuple.aether + AlchemyActions.getNIncrease();
         logger.info("Performing coagulatePureAetherAction. aether={} block={} n={}", tuple.aether, block, n);
 
-        for (int i = 0; i < n; i++) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(source, block));
-        }
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new AetherShieldCard(block, n)));
     }
 }

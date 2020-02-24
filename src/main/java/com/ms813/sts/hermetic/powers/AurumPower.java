@@ -9,14 +9,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.ms813.sts.hermetic.alchemy.AlchemyActions;
 import com.ms813.sts.hermetic.effects.CoinEffects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import static com.ms813.sts.hermetic.HermeticMod.IMG_PATH;
+import static com.ms813.sts.hermetic.HermeticMod.EXAMPLE_IMG_PATH;
 import static com.ms813.sts.hermetic.alchemy.AlchemyActions.CURRENT_MAX_AURUM;
 
 public class AurumPower extends AbstractPower {
@@ -44,7 +43,7 @@ public class AurumPower extends AbstractPower {
         this.ID = POWER_ID;
         this.name = powerStrings.NAME;
         this.owner = owner;
-        this.img = new Texture(IMG_PATH + "powers/FullAwakening.png");
+        this.img = new Texture(EXAMPLE_IMG_PATH + "powers/FullAwakening.png");
         this.amount = amount;
         this.type = PowerType.DEBUFF;
         this.updateDescription();

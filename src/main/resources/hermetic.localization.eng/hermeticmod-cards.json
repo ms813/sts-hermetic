@@ -1,7 +1,57 @@
 {
+  "StrikeHermeticCard": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "DefendHermeticCard": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
   "IgniteCard": {
-    "NAME": "Ignite",
-    "DESCRIPTION": "Deal !D! damage !M! times.",
+    "NAME": "Ignite Aether",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage !M!. NL Exhaust."
+  },
+  "AetherShieldCard": {
+    "NAME": "Aether Shield",
+    "DESCRIPTION": "Gain !B! block !M! times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! block !M! times. NL Exhaust."
+  },
+  "LiquidateCard": {
+    "NAME": "Liquidate",
+    "DESCRIPTION": "Ethereal. NL Exhaust a random card in your hand. NL Gain !M! times its energy cost in #ygold. NL Exhaust."
+  },
+  "GlitteringAegisCard": {
+    "NAME": "Glittering Aegis",
+    "DESCRIPTION": "Every time you gain #ygold, gain !M! block."
+  },
+  "BribeCard": {
+    "NAME": "Bribe",
+    "DESCRIPTION": "Pay !M! gold. NL Choose a card from your draw pile and add it to your hand. NL It costs 0 this turn. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Pay !M! gold. NL Choose a card from your draw pile and add it to your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't afford to play this card.",
+      "I'm broke.",
+      "I'm too broke to play this card.",
+      "This card costs more than I can afford.",
+      "I need at least 25 #ygold to play this card.",
+      "I don't have enough gold to play this card."
+    ]
+  },
+  "ImbueCard": {
+    "NAME": "Imbue",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! aether."
+  },
+  "ChemicalSpillCard": {
+    "NAME": "Chemical Spill",
+    "DESCRIPTION": "Deal !D! damage. Quicken all enemies."
+  },
+  "FirstPrinciplesCard": {
+    "NAME": "First Principles",
+    "DESCRIPTION": "Gain !B! block. Apply !M! aether."
+  },
+  "AffluenceAblationCard": {
+    "NAME": "Affluence Ablation",
+    "DESCRIPTION": "Every time you would take damage, spend 1 gold to reduce the damage by 1."
   }
 }

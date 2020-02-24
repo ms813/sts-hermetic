@@ -20,7 +20,9 @@ import com.megacrit.cardcrawl.relics.UnceasingTop;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.ms813.sts.hermetic.HermeticMod;
-import com.ms813.sts.hermetic.cards.test.*;
+import com.ms813.sts.hermetic.cards.basic.DefendHermeticCard;
+import com.ms813.sts.hermetic.cards.basic.FirstPrinciplesCard;
+import com.ms813.sts.hermetic.cards.basic.StrikeHermeticCard;
 import com.ms813.sts.hermetic.patches.HermeticCardColorPatch;
 import com.ms813.sts.hermetic.patches.HermeticPlayerClassPatch;
 
@@ -34,7 +36,7 @@ public class HermeticCharacter extends CustomPlayer {
     public static final int STARTING_GOLD = 49;
     public static final int HAND_SIZE = 5;
 
-    public static final String CHARACTER_IMG_PATH = HermeticMod.IMG_PATH + "char/";
+    public static final String CHARACTER_IMG_PATH = HermeticMod.EXAMPLE_IMG_PATH + "char/";
     public static final String MY_CHARACTER_SHOULDER_2 = CHARACTER_IMG_PATH + "valiant_shoulder2.png"; // campfire pose
     public static final String MY_CHARACTER_SHOULDER_1 = CHARACTER_IMG_PATH + "valiant_shoulder.png"; // another campfire pose
     public static final String MY_CHARACTER_CORPSE = CHARACTER_IMG_PATH + "corpse_valiant.png"; // dead corpse
@@ -97,13 +99,12 @@ public class HermeticCharacter extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         final ArrayList<String> cards = new ArrayList<>();
-//        cards.add("Strike_Hermetic");
-        cards.add(TestApplyAetherCard.ID);
-        cards.add(TestApplyAurumCard.ID);
-        cards.add(TestApplySanguisCard.ID);
-        cards.add(TestQuickenCard.ID);
-        cards.add(TestCoagulateCard.ID);
-        cards.add(TestSublimateCard.ID);
+        for(int i = 0; i < 5; i++){
+            cards.add(StrikeHermeticCard.ID);
+            cards.add(DefendHermeticCard.ID);
+        }
+        cards.add(FirstPrinciplesCard.ID);
+
         return cards;
     }
 

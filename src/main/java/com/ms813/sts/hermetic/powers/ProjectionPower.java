@@ -23,7 +23,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.ms813.sts.hermetic.HermeticMod.IMG_PATH;
+import static com.ms813.sts.hermetic.HermeticMod.EXAMPLE_IMG_PATH;
 
 public class ProjectionPower extends AbstractPower {
 
@@ -40,7 +40,7 @@ public class ProjectionPower extends AbstractPower {
         this.ID = POWER_ID;
         this.name = powerStrings.NAME;
         this.owner = owner;
-        this.img = new Texture(IMG_PATH + "powers/FullAwakening.png");
+        this.img = new Texture(EXAMPLE_IMG_PATH + "powers/FullAwakening.png");
         this.coinsPerUse = coinsPerUse;
         this.updateDescription();
     }

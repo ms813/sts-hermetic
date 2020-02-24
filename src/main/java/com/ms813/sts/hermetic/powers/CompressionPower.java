@@ -9,7 +9,7 @@ import com.ms813.sts.hermetic.alchemy.AlchemyActions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.ms813.sts.hermetic.HermeticMod.IMG_PATH;
+import static com.ms813.sts.hermetic.HermeticMod.EXAMPLE_IMG_PATH;
 
 public class CompressionPower extends AbstractPower {
 
@@ -24,7 +24,7 @@ public class CompressionPower extends AbstractPower {
         this.ID = POWER_ID;
         this.name = powerStrings.NAME;
         this.owner = owner;
-        this.img = new Texture(IMG_PATH + "powers/Charge.png");
+        this.img = new Texture(EXAMPLE_IMG_PATH + "powers/Charge.png");
         this.type = PowerType.BUFF;
         this.amount = amount;
         this.updateDescription();

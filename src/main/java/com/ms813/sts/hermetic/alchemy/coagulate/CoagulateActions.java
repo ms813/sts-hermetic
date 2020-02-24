@@ -22,8 +22,6 @@ public class CoagulateActions {
 
     public static final CoagulateActions instance = new CoagulateActions();
 
-    public final Map<AlchemyTuple, AlchemyActionConsumer> actions = new HashMap<>();
-
     public AlchemyTuple apply(
         final AetherPower aether,
         final SanguisPower sanguis,

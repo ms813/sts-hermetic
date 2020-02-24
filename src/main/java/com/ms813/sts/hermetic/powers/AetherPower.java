@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.ms813.sts.hermetic.HermeticMod.IMG_PATH;
+import static com.ms813.sts.hermetic.HermeticMod.EXAMPLE_IMG_PATH;
 import static com.ms813.sts.hermetic.alchemy.AlchemyActions.CURRENT_MAX_ESSENCES;
 
 public class AetherPower extends AbstractPower {
@@ -26,7 +26,7 @@ public class AetherPower extends AbstractPower {
         this.ID = POWER_ID;
         this.name = powerStrings.NAME;
         this.owner = owner;
-        this.img = new Texture(IMG_PATH + "powers/Charge.png");
+        this.img = new Texture(EXAMPLE_IMG_PATH + "powers/Charge.png");
         this.amount = amount;
         this.type = PowerType.DEBUFF;
         this.updateDescription();
@@ -45,6 +45,11 @@ public class AetherPower extends AbstractPower {
         this.bindStacksToMax();
     }
 
+    /**
+     * Check here for other powers + artifacts that increase the number of times
+     * this power should be applied
+     * @param baseAmount amount before increases
+     */
     private void applyIncreases(int baseAmount) {
         final AbstractPlayer player = AbstractDungeon.player;
         if (player.hasPower(ConduitPower.POWER_ID)) {

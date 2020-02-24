@@ -10,9 +10,18 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.ms813.sts.hermetic.cards.StrikeHermeticCard;
+import com.ms813.sts.hermetic.cards.basic.DefendHermeticCard;
+import com.ms813.sts.hermetic.cards.basic.FirstPrinciplesCard;
+import com.ms813.sts.hermetic.cards.basic.StrikeHermeticCard;
+import com.ms813.sts.hermetic.cards.coagulate.AetherShieldCard;
+import com.ms813.sts.hermetic.cards.common.ChemicalSpillCard;
+import com.ms813.sts.hermetic.cards.common.ImbueCard;
 import com.ms813.sts.hermetic.cards.quicken.IgniteCard;
+import com.ms813.sts.hermetic.cards.rare.AffluenceAblationCard;
+import com.ms813.sts.hermetic.cards.rare.BribeCard;
+import com.ms813.sts.hermetic.cards.rare.LiquidateCard;
 import com.ms813.sts.hermetic.cards.test.*;
+import com.ms813.sts.hermetic.cards.uncommon.GlitteringAegisCard;
 import com.ms813.sts.hermetic.characters.HermeticCharacter;
 import com.ms813.sts.hermetic.patches.HermeticCardColorPatch;
 import com.ms813.sts.hermetic.patches.HermeticPlayerClassPatch;
@@ -22,8 +31,13 @@ import org.slf4j.LoggerFactory;
 @SpireInitializer
 public class HermeticMod implements EditCharactersSubscriber, EditCardsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber {
 
-    public static final String _IMG_PATH = "img/color/";
-    public static final String IMG_PATH = "example/img/";
+    private final boolean debug = true;
+
+    public static final String COLOR_PATH = "img/color/";
+    public static final String CARD_IMG_PATH = "img/cards/generated/%s.png";
+    public static final String POWER_IMG_PATH = "img/powers/%s_32.png";
+    public static final String CARD_P_IMG_PATH = "img/cards/generated/%s_p.png";
+    public static final String EXAMPLE_IMG_PATH = "example/img/";
 
     private static final Logger logger = LoggerFactory.getLogger(HermeticMod.class);
 
@@ -33,7 +47,7 @@ public class HermeticMod implements EditCharactersSubscriber, EditCardsSubscribe
 
     @SuppressWarnings("unused")
     public static void initialize() {
-        logger.info("@@@@@@@@@@ Initializing HermeticMod @@@@@@@@@@");
+        logger.info("Initializing HermeticMod ");
         final HermeticMod mod = new HermeticMod();
         final Color bgColor = new Color(255, 215, 0, 1);
         final Color backColor = new Color(255, 215, 0, 1);
@@ -41,14 +55,14 @@ public class HermeticMod implements EditCharactersSubscriber, EditCardsSubscribe
         final Color frameOutlineColor = new Color(255, 215, 0, 1);
         final Color descBoxColor = new Color(255, 215, 0, 1);
         final Color glowColor = new Color(255, 215, 0, 1);
-        final String attackBg = _IMG_PATH + "attack_bg_512.png";
-        final String skillBg = _IMG_PATH + "skill_bg_512.png";
-        final String powerBg = _IMG_PATH + "power_bg_512.png";
-        final String energyOrb = _IMG_PATH + "orb.png";
-        final String attackBgPortrait = _IMG_PATH + "attack_bg_512.png";
-        final String skillBgPortrait = _IMG_PATH + "skill_bg_512.png";
-        final String powerBgPortrait = _IMG_PATH + "power_bg_512.png";
-        final String energyOrbPortrait = _IMG_PATH + "orb.png";
+        final String attackBg = COLOR_PATH + "attack_bg_512.png";
+        final String skillBg = COLOR_PATH + "skill_bg_512.png";
+        final String powerBg = COLOR_PATH + "power_bg_512.png";
+        final String energyOrb = COLOR_PATH + "orb.png";
+        final String attackBgPortrait = COLOR_PATH + "attack_bg_512.png";
+        final String skillBgPortrait = COLOR_PATH + "skill_bg_512.png";
+        final String powerBgPortrait = COLOR_PATH + "power_bg_512.png";
+        final String energyOrbPortrait = COLOR_PATH + "orb.png";
 
         BaseMod.addColor(
             HermeticCardColorPatch.HERMETICMOD_GOLD,
@@ -64,8 +78,8 @@ public class HermeticMod implements EditCharactersSubscriber, EditCardsSubscribe
         logger.info("HermeticMod::receiveEditCharacters()");
         BaseMod.addCharacter(
             new HermeticCharacter(CardCrawlGame.playerName),
-            IMG_PATH + "charSelect/Logo1.png",
-            IMG_PATH + "charSelect/Valiant_Select_Screen.png",
+            EXAMPLE_IMG_PATH + "charSelect/Logo1.png",
+            EXAMPLE_IMG_PATH + "charSelect/Valiant_Select_Screen.png",
             HermeticPlayerClassPatch.HERMETIC
         );
     }
@@ -74,9 +88,20 @@ public class HermeticMod implements EditCharactersSubscriber, EditCardsSubscribe
     public void receiveEditCards() {
         logger.info("HermeticMod::receiveEditCards()");
         BaseMod.addCard(new StrikeHermeticCard());
+        BaseMod.addCard(new DefendHermeticCard());
+        BaseMod.addCard(new FirstPrinciplesCard());
         BaseMod.addCard(new IgniteCard());
+        BaseMod.addCard(new AetherShieldCard());
+        BaseMod.addCard(new LiquidateCard());
+        BaseMod.addCard(new GlitteringAegisCard());
+        BaseMod.addCard(new BribeCard());
+        BaseMod.addCard(new ImbueCard());
+        BaseMod.addCard(new ChemicalSpillCard());
+        BaseMod.addCard(new AffluenceAblationCard());
 
-        loadTestCards();
+        if (debug) {
+            loadTestCards();
+        }
     }
 
     private void loadTestCards() {

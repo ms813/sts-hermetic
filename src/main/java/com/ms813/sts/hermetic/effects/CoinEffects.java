@@ -1,8 +1,14 @@
 package com.ms813.sts.hermetic.effects;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.ExhaustBlurEffect;
+import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 
 import java.util.ArrayList;
@@ -86,5 +92,60 @@ public class CoinEffects {
             );
         }
         AbstractDungeon.effectList.addAll(effects);
+    }
+
+    public static void coinExhaust(final int startX, final int startY, final int endX, final int endY, final int coins){
+        AbstractDungeon.effectList.add(new CoinExhaustEffect(startX, startY, endX, endY, coins));
+    }
+
+    public static class CoinExhaustEffect extends AbstractGameEffect {
+
+        private final int startX;
+        private final int startY;
+        private final int endX;
+        private final int endY;
+        private final int coins;
+
+        CoinExhaustEffect(final int startX, final int startY, final int endX, final int endY, int coins) {
+            this.startX = startX;
+            this.startY = startY;
+            this.endX = endX;
+            this.endY = endY;
+            this.coins = coins;
+            this.duration = 1.0f;
+        }
+
+        @Override
+        public void update() {
+            if (this.duration == 1.0F) {
+                for(int i = 0; i < coins; i++){
+                    AbstractDungeon.effectsQueue.add(new GainPennyEffect(AbstractDungeon.player, startX, startY, endX, endY, false));
+                }
+            } else if(this.duration <= 0.5f){
+                CardCrawlGame.sound.play("CARD_EXHAUST", 0.2F);
+
+                int i;
+                for (i = 0; i < coins; ++i) {
+                    AbstractDungeon.effectsQueue.add(new ExhaustBlurEffect(this.endX, this.endY));
+                }
+
+                for (i = 0; i < coins; ++i) {
+                    AbstractDungeon.effectsQueue.add(new ExhaustEmberEffect(this.endX, this.endY));
+                }
+            }
+            this.duration -= Gdx.graphics.getDeltaTime();
+            if (this.duration < 0.0F) {
+                this.isDone = true;
+            }
+        }
+
+        @Override
+        public void render(SpriteBatch spriteBatch) {
+        }
+
+        @Override
+        public void dispose() {
+
+        }
     }
 }

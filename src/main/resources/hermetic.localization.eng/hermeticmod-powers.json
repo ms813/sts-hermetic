@@ -20,14 +20,14 @@
   "ProjectionPower": {
     "NAME": "Projection",
     "DESCRIPTIONS": [
-      "Permanently upgrade the next card you play with midas"
+      "Permanently upgrade the next card you play with midas."
     ]
   },
   "ConduitPower": {
     "NAME": "Conduit",
     "DESCRIPTIONS": [
       "Every time you apply aether or sanguis, apply ",
-      " more"
+      " more."
     ]
   },
   "CompressionPower": {
@@ -35,6 +35,20 @@
     "DESCRIPTIONS": [
       "Increase the maximum essence stacks by ",
       ". The current max is "
+    ]
+  },
+  "GlitteringAegisPower": {
+    "NAME": "Glittering Aegis",
+    "DESCRIPTIONS": [
+      "Every time you gain gold, gain ",
+      " block."
+    ]
+  },
+  "AffluenceAblationPower": {
+    "NAME": "Affluence Ablation",
+    "DESCRIPTIONS": [
+      "Every time you would take damage, spend ",
+      " gold to reduce the damage by "
     ]
   }
 }

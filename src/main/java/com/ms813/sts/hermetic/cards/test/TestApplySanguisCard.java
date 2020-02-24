@@ -9,7 +9,7 @@ import com.ms813.sts.hermetic.powers.SanguisPower;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.ms813.sts.hermetic.HermeticMod.IMG_PATH;
+import static com.ms813.sts.hermetic.HermeticMod.EXAMPLE_IMG_PATH;
 
 public class TestApplySanguisCard extends CustomCard {
 
@@ -20,7 +20,7 @@ public class TestApplySanguisCard extends CustomCard {
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.ENEMY;
     private static final CardType type = CardType.SKILL;
-    private static final String assetPath = IMG_PATH + "cards/Chained Smite.png";
+    private static final String assetPath = EXAMPLE_IMG_PATH + "cards/Chained Smite.png";
 
     public TestApplySanguisCard() {
         super(

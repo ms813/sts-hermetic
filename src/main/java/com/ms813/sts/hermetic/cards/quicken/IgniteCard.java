@@ -11,7 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.ms813.sts.hermetic.HermeticMod.IMG_PATH;
+import static com.ms813.sts.hermetic.HermeticMod.CARD_IMG_PATH;
+import static com.ms813.sts.hermetic.HermeticMod.EXAMPLE_IMG_PATH;
 
 public class IgniteCard extends CustomCard {
 
@@ -23,7 +24,6 @@ public class IgniteCard extends CustomCard {
     private static final CardTarget target = CardTarget.ENEMY;
     private static final CardType type = CardType.ATTACK;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String assetPath = IMG_PATH + "cards/Aura Discharge.png";
 
     public IgniteCard(final int dmg, final int n) {
         this();
@@ -37,7 +37,7 @@ public class IgniteCard extends CustomCard {
         super(
             ID,
             cardStrings.NAME,
-            assetPath,
+            String.format(CARD_IMG_PATH, ID),
             cost,
             cardStrings.DESCRIPTION,
             type,
@@ -55,10 +55,13 @@ public class IgniteCard extends CustomCard {
     }
 
     @Override
+    public IgniteCard makeCopy() {
+        return new IgniteCard(this.baseDamage, this.baseMagicNumber);
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        logger.info("Ignite D={} M={}", damage, baseMagicNumber);
         for (int i = 0; i < baseMagicNumber; i++) {
-            logger.info("Ignite i={} D={} M={}", i, damage, baseMagicNumber);
             this.addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.FIRE));
         }
     }
